@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Tristan Debernardi — Atelier Zendegi</title>
+<meta name="description" content="Tristan Debernardi — Atelier Zendegi">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --bg: #0B0F2A;
+    --text: #F4EDDE;
+    --text-dim: rgba(244, 237, 222, 0.4);
+    --text-mid: rgba(244, 237, 222, 0.6);
+  }
+
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Page fade-in */
+  .page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100dvh;
+    padding: 2rem 1.5rem;
+    opacity: 0;
+    animation: fadeIn 0.45s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+
+  /* Dot */
+  .dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--text);
+    margin-bottom: 2.8rem;
+    margin-left: 2.5%;
+    animation: pulse 3.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.88; }
+    50% { opacity: 1; }
+  }
+
+  /* Identity */
+  .identity {
+    text-align: center;
+    margin-bottom: 3.2rem;
+  }
+
+  .name {
+    font-size: clamp(1.65rem, 5.5vw, 2.6rem);
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin-bottom: 0.55rem;
+  }
+
+  .atelier {
+    font-size: clamp(0.95rem, 3vw, 1.15rem);
+    font-weight: 300;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    line-height: 1.3;
+  }
+
+  /* CTA Button */
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.95rem 2.8rem;
+    border: 1px solid rgba(244, 237, 222, 0.35);
+    border-radius: 40px;
+    background: transparent;
+    color: var(--text);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 52px;
+    margin-bottom: 2.8rem;
+  }
+
+  .cta:hover {
+    border-color: rgba(244, 237, 222, 0.7);
+    background-color: rgba(244, 237, 222, 0.06);
+  }
+
+  .cta:active {
+    background-color: rgba(244, 237, 222, 0.1);
+  }
+
+  /* Secondary links */
+  .links {
+    display: flex;
+    gap: 2.2rem;
+    margin-bottom: 3rem;
+  }
+
+  .links a {
+    font-size: clamp(0.8rem, 2.2vw, 0.88rem);
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .links a:hover {
+    color: var(--text-mid);
+  }
+
+  /* Projects line */
+  .projects {
+    margin-bottom: 3rem;
+  }
+
+  .projects a {
+    font-size: clamp(0.72rem, 1.8vw, 0.8rem);
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .projects a:hover {
+    color: var(--text-mid);
+  }
+
+  /* Footer */
+  .footer {
+    position: absolute;
+    bottom: 1.6rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.65rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(244, 237, 222, 0.18);
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="dot"></div>
+
+  <div class="identity">
+    <div class="name">Tristan Debernardi</div>
+    <div class="atelier">Atelier Zendegi</div>
+  </div>
+
+  <a class="cta" href="data:text/vcard;charset=utf-8,BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3ADebernardi%3BTristan%3B%3B%3B%0AFN%3ATristan%20Debernardi%0AORG%3AAtelier%20Zendegi%0AEMAIL%3Btype%3DINTERNET%3Atristan%40condere.ch%0ATEL%3Btype%3DCELL%3A%2B41793919703%0AURL%3Ahttps%3A%2F%2Fcard.debernardi.li%0AEND%3AVCARD" download="Tristan_Debernardi.vcf">
+    Add Contact
+  </a>
+
+  <nav class="links">
+    <a href="https://wa.me/41793919703" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="mailto:tristan@condere.ch">Email</a>
+    <a href="https://www.linkedin.com/in/tdebernardi/" target="_blank" rel="noopener">LinkedIn</a>
+  </nav>
+
+  <div class="projects">
+    <a href="https://debernardi.li" target="_blank" rel="noopener">Selected projects available by clicking this link</a>
+  </div>
+
+  <div class="footer">Atelier Zendegi</div>
+</div>
+
+</body>
+</html>
